@@ -27,6 +27,6 @@ public class Country {
     }
 
     public void addCity(String cityID, String cityName, Float latitude, Float longitude) {
-        cities.add(new City(cityID,cityName,latitude,longitude));
+        cities.add(new City(cityID, cityName, latitude, longitude));
     }
 }
