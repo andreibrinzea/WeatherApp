@@ -1,0 +1,72 @@
+Wednesday 23:27: Country: France  City:Tarascon
+Main weather: Clear sky
+Weather description: Clear
+Degrees: 7.72°C
+Pressure: 1022.0 hPa
+Humidity: 57.0%
+Wind: 4.63km/h
+
+Wednesday 23:27: Country: France  City:Ploufragan
+Main weather: Overcast clouds
+Weather description: Clouds
+Degrees: 9.11°C
+Pressure: 1024.0 hPa
+Humidity: 81.0%
+Wind: 3.6km/h
+
+Thursday 00:27: Country: Romania  City:Bucharest
+Main weather: Mist
+Weather description: Mist
+Degrees: 0.84°C
+Pressure: 1009.0 hPa
+Humidity: 93.0%
+Wind: 0.51km/h
+
+Thursday 00:27: Country: Romania  City:Buzau
+Main weather: Overcast clouds
+Weather description: Clouds
+Degrees: 0.64°C
+Pressure: 1010.0 hPa
+Humidity: 86.0%
+Wind: 3.25km/h
+
+Thursday 06:27: Country: China  City:Beijing
+Main weather: Clear sky
+Weather description: Clear
+Degrees: -3.66°C
+Pressure: 1018.0 hPa
+Humidity: 86.0%
+Wind: 1.0km/h
+
+Wednesday 23:27: Country: Germany  City:Berlin
+Main weather: Light snow
+Weather description: Snow
+Degrees: 0.94°C
+Pressure: 1002.0 hPa
+Humidity: 80.0%
+Wind: 7.72km/h
+
+Wednesday 23:27: Country: Belgium  City:Brussels
+Main weather: Few clouds
+Weather description: Clouds
+Degrees: 3.42°C
+Pressure: 1017.0 hPa
+Humidity: 81.0%
+Wind: 3.09km/h
+
+Wednesday 23:27: Country: Norway  City:Oslo
+Main weather: Clear sky
+Weather description: Clear
+Degrees: -6.36°C
+Pressure: 1020.0 hPa
+Humidity: 79.0%
+Wind: 5.66km/h
+
+Wednesday 23:27: Country: Germany  City:Berlin
+Main weather: Light snow
+Weather description: Snow
+Degrees: 0.94°C
+Pressure: 1002.0 hPa
+Humidity: 80.0%
+Wind: 7.72km/h
+

@@ -17,7 +17,7 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         try {
-            FileWriter fw = new FileWriter("log.txt", true);
+            FileWriter fw = new FileWriter("src/main/resources/log.txt", true);
             Logger logger = Logger.getInstance(fw);
 
             launch(args);
