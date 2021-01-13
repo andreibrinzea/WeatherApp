@@ -17,6 +17,8 @@ public class CountryNames {
      * Members of class CountryNames
      * <i>countryNamesMap</i> used to map countries names
      * and countries codes
+     * <i>countryNames_instance</i> instance of class because this
+     * is a singleton class
      */
     private static final Map<String, String> countryNamesMap = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
 
@@ -275,6 +277,10 @@ public class CountryNames {
 
     }
 
+    /**
+     * Function used to return instance of class
+     * @return instance of class
+     */
     public static CountryNames getInstance() {
         if (countryNames_instance == null) {
             countryNames_instance = new CountryNames();

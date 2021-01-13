@@ -9,26 +9,54 @@ import ro.mta.se.lab.model.Country;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Class used to save date from input file
+ *
+ * @author Andrei Brinzea
+ */
 public class Parser {
+    /**
+     * Members of class <b>Parser</b>
+     * <i>initCountries</i> list where store countries
+     * and specific cities values from input file
+     * <i>inputFilename</i> input filename
+     */
     private final ObservableList<Country> initCountries;
+    private final String inputFilename;
 
-
+    /**
+     * Function used to return input filename
+     * @return input filename
+     */
     public String getInputFilename() {
         return inputFilename;
     }
 
-    private final String inputFilename;
-
+    /**
+     * <b>Parser</b> class constructor
+     * @param inputFilename name of input file
+     */
     public Parser(String inputFilename) {
         this.initCountries = FXCollections.observableArrayList();
         this.inputFilename = inputFilename;
     }
 
+    /**
+     * <b>Parser</b> class constructor
+     * @param inputFilename name of input file
+     * @param countries list of countries
+     */
     public Parser(String inputFilename, ObservableList<Country> countries) {
         this.initCountries = countries;
         this.inputFilename = inputFilename;
     }
 
+    /**
+     * Function used to return list of countries and specific
+     * values for cities read from input file
+     * @return list of countries
+     * @throws IOException  if reading from input filename is invalid
+     */
     public ObservableList<Country> getInitData() throws IOException {
         ArrayList<String> fileLines = readFromFile();
 
@@ -56,6 +84,10 @@ public class Parser {
         return initCountries;
     }
 
+    /**
+     * Function getter used to return list of countries
+     * @return list of countries
+     */
     public ObservableList<Country> getInitCountries() {
         return initCountries;
     }
@@ -80,7 +112,15 @@ public class Parser {
         return fileLines;
     }
 
-
+    /**
+     * Function used to add a specific city in country list
+     * @param cityID ID of city
+     * @param cityName name of city
+     * @param latitude latitude of city
+     * @param longitude longitude of city
+     * @param countryCode country code where city will be added
+     * @throws DuplicateCityException if city has been already added
+     */
     public void addCityInCountriesList(String cityID, String cityName, Float latitude,
                                        Float longitude, String countryCode) throws DuplicateCityException {
         int i, j;
@@ -102,7 +142,6 @@ public class Parser {
         cities.add(new City(cityID, cityName, latitude, longitude));
 
         initCountries.add(new Country(cities, countryCode));
-
     }
 
 }
