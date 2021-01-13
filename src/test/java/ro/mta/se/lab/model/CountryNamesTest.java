@@ -8,8 +8,23 @@ import org.junit.rules.ExpectedException;
 import ro.mta.se.lab.CustomExceptions.InvalidCountryException;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link CountryNames} class
+ * and contains parameterized tests
+ *
+ * @author Andrei Brinzea
+ */
 
 public class CountryNamesTest {
+    /**
+     * Members of <b>CountryNamesTest</b>
+     * <i>countryNamesInstance: </i> instance of {@link CountryNames}
+     * <i>validCountryCode1: </i> code used for an valid test
+     * <i>validCountryCode2: </i> code used for an valid test
+     * <i>invalidCountryCode: </i> code used for an invalid test
+     * <i>validCountryName1: </i> code used for an valid test
+     * <i>validCountryName2: </i> code used for an valid test
+     */
 
     private CountryNames countryNamesInstance = null;
     private String validCountryCode1 = null;
@@ -18,6 +33,9 @@ public class CountryNamesTest {
     private String validCountryName1 = null;
     private String validCountryName2 = null;
 
+    /**
+     * Function used to set specific date before test
+     */
     @Before
     public void setUp() {
         countryNamesInstance = CountryNames.getInstance();
@@ -28,12 +46,19 @@ public class CountryNamesTest {
         validCountryName2 = "Venezuela";
     }
 
+    /**
+     * Test function test used to check instance of {@link CountryNames}
+     * class
+     */
     @Test
     public void checkInstance() {
         assertNotNull(countryNamesInstance);
         assertSame(CountryNames.getInstance(), countryNamesInstance);
     }
 
+    /**
+     * Test function used to check valid country codes
+     */
     @Test
     public void checkValidCountryCodes() {
         assertSame(CountryNames.getInstance(), countryNamesInstance);
@@ -48,6 +73,10 @@ public class CountryNamesTest {
     @Rule
     public ExpectedException invalidCountryException = ExpectedException.none();
 
+    /**
+     * Test function used to check a specific exception for an
+     * invalid country code
+     */
     @Test
     public void invalidCountryCode() throws InvalidCountryException {
         invalidCountryException.expect(InvalidCountryException.class);
@@ -56,6 +85,9 @@ public class CountryNamesTest {
         String countryName = countryNamesInstance.getCountryNamesbyCode(invalidCountryCode);
     }
 
+    /**
+     * Function used to clear data after test
+     */
     @After
     public void clearData() {
         countryNamesInstance = null;
