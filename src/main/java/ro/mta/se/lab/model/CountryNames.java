@@ -5,12 +5,27 @@ import ro.mta.se.lab.CustomExceptions.InvalidCountryException;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Model class used for saving mapping countries names
+ * with specific countries codes
+ *
+ * @author Andrei Brinzea
+ */
 
 public class CountryNames {
+    /**
+     * Members of class CountryNames
+     * <i>countryNamesMap</i> used to map countries names
+     * and countries codes
+     */
     private static final Map<String, String> countryNamesMap = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
 
     private static CountryNames countryNames_instance = null;
 
+    /**
+     * <b>CountryNames</b> class constructor
+     * Save mapping of values countries names - countries codes
+     */
     private CountryNames() {
 
         countryNamesMap.put("Andorra, Principality Of", "AD");
@@ -267,6 +282,13 @@ public class CountryNames {
         return countryNames_instance;
     }
 
+    /**
+     * Function used to return country name from country code.
+     * @param codeCountry country code
+     * @return country code if it is valid, otherwise throws
+     * an exception
+     * @throws InvalidCountryException if country code is not valid
+     */
     public String getCountryNamesbyCode(String codeCountry) throws InvalidCountryException {
         String countryName = "";
 
