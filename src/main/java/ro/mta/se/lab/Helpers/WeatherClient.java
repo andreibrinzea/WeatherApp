@@ -14,9 +14,9 @@ import java.net.URLConnection;
 public class WeatherClient {
     /**
      * Members of <b>WeatherClient</b> class
-     * <i>weatherClient_instance</i> instance of class because is a
+     * <i>weatherClient_instance: </i> instance of class because is a
      * singleton class
-     * <i>apiKey</i> key used for weather API
+     * <i>apiKey: </i> key used for weather API
      */
 
     private static WeatherClient weatherClient_instance = null;

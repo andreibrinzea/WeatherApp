@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class Parser {
     /**
      * Members of class <b>Parser</b>
-     * <i>initCountries</i> list where store countries
+     * <i>initCountries: </i> list where store countries
      * and specific cities values from input file
-     * <i>inputFilename</i> input filename
+     * <i>inputFilename: </i> input filename
      */
     private final ObservableList<Country> initCountries;
     private final String inputFilename;

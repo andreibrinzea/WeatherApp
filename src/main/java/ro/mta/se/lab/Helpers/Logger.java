@@ -12,9 +12,9 @@ import java.io.IOException;
 public class Logger {
     /**
      * Members of <b>Logger</b> class
-     * <i>logger_instance</i> instance of class because this
+     * <i>logger_instance: </i> instance of class because this
      * is a singleton class
-     * <i>logFile</i> file for log data
+     * <i>logFile: </i> file for log data
      */
 
     private static Logger logger_instance = null;

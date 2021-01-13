@@ -29,7 +29,35 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
+/**
+ * Controller class used to calling
+ * specific methods for retrieving and
+ * managing necessary data and display
+ * it in interface
+ *
+ * @author Andrei Brinzea
+ */
+
 public class WeatherController {
+    /**
+     * Members of <b>WeatherController</b> class
+     * <i>countryData: </i> list with countries specific data
+     * <i>currentCitiesData: </i> current cities which are displayed
+     * in interface
+     *
+     * <i>countryBox: </i> ComboBox used for displaying of cities
+     * <i>cityBox: </i> ComboBox used for displaying cities
+     * <i>cityLabel: </i> Label used to display city name
+     * <i>dateLabel: </i> Label used to display date
+     * <i>descriptionLabel: </i> Label used to display weather
+     * description
+     * <i>pressureLabel: </i> Label used to display pressure value
+     * <i>humidityLabel: </i> Label used to display umidity value
+     * <i>windLabel: </i> Label used to display wind value
+     * <i>degreeLabel: </i> Label used to display degrees value
+     * <i>imageView: </i> image display the current weather from city
+     * which has been selected
+     */
     private final ObservableList<Country> countryData;
     private final ObservableList<City> currentCitiesData;
 
@@ -64,11 +92,19 @@ public class WeatherController {
     private ImageView imageView;
 
 
+    /**
+     * <b>WeatherController</b> class constructor
+     * @param countryData list of countries
+     */
     public WeatherController(ObservableList<Country> countryData) {
         this.countryData = countryData;
         currentCitiesData = FXCollections.observableArrayList();
     }
 
+    /**
+     * Function used to initialize countryBox and cityBox
+     * and implements theirs specific handlers
+     */
     @FXML
     private void initialize() {
         countryBox.setPromptText("Choose a country");
@@ -150,6 +186,10 @@ public class WeatherController {
 
     }
 
+    /**
+     * Function used to display current cities in interface
+     * @param countryCode country specific code
+     */
     private void showCities(String countryCode) {
         int i;
 
@@ -165,7 +205,12 @@ public class WeatherController {
 
     }
 
-
+    /**
+     * Function used to retrieve specific data information from
+     * {@link WeatherClient#getResults(String)} method and
+     * display it in interface
+     * @param cityID ID of city
+     */
     private void showWeatherVoid(String cityID) {
         float degree = 0;
         float humidity = 0;
@@ -188,6 +233,8 @@ public class WeatherController {
         }
 
         if (!results.equals("")) {
+
+            //Retrieve data from json object which server returned
             JsonObject baseObject = Json.parse(results).asObject();
             JsonArray weatherArray = baseObject.get("weather").asArray();
             JsonObject mainObject = baseObject.get("main").asObject();
@@ -202,10 +249,16 @@ public class WeatherController {
             wind = baseObject.get("wind").asObject().getFloat("speed", 0);
             name = getCityNamebyID(cityID);
 
+            //Save specific timezone from server response
             long timezone = baseObject.getLong("timezone", 0);
+
+            //Save current datetime and convert it in general UTC time
             long datetime = Instant.now().toEpochMilli() - 7200 * 1000;
+
+            //Add timezone tu general UTC time
             datetime += (timezone * 1000);
 
+            //Obtained current date time in city which has been selected
             Date date = new Date(datetime);
             currentDay = formatForDay.format(date);
             completeDate = currentDay + " " + formatter.format(date);
@@ -230,7 +283,11 @@ public class WeatherController {
 
             String imageFilename = getImageFilename(baseObject);
             try {
+
+                //Retrieve current weather image from server response
                 Image image = new Image(new FileInputStream(imageFilename));
+
+                //Display image in interface
                 imageView.setImage(image);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -247,6 +304,12 @@ public class WeatherController {
         }
     }
 
+    /**
+     * Function used to return name of city by
+     * his name
+     * @param cityID ID of city
+     * @return name of city
+     */
     private String getCityNamebyID(String cityID) {
 
         for (City city : currentCitiesData) {
@@ -258,6 +321,12 @@ public class WeatherController {
         return currentCitiesData.get(0).getName();
     }
 
+    /**
+     * Function used to return specific image filename
+     * for current weather in city which has been selected
+     * @param baseObject Json object returned by server
+     * @return image filename for current weather in selected city
+     */
     private String getImageFilename(JsonObject baseObject) {
         StringBuilder imageFilename = new StringBuilder();
         JsonArray weatherArray = baseObject.get("weather").asArray();
