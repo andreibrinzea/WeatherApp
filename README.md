@@ -10,9 +10,9 @@ Weather application
 - [Realizator](#realizator)
 
 ## Descriere
-Este o aplicate de monitorizare meteorologica dezvoltata in limbajul de programare **Java**. Pornind de la un fisier de intrare cu diferite date despre localitati, aplicatia va realiza cereri prin intermediului API-ului [OpenWeatherAPI](https://openweathermap.org/api) pentru a putea primi ca si raspuns datele metereologice necesare. Parsarea raspunsului primit de la server, fiind in format JSON, este realizata cu ajutorului bibliotecii [minimal-json](https://github.com/ralfstx/minimal-json). De asemenea, aplicatia foloseste **Maven** pentru rezolvarea dependentilor necesare si [JavaFX](https://openjfx.io/) pentru realizarea aplicatiei cu interfata grafica.
+Este o aplicate de monitorizare meteorologica dezvoltata in limbajul de programare **Java**. Pornind de la un fisier de intrare cu diferite date despre localitati, aplicatia va realiza cereri prin intermediului API-ului [OpenWeatherAPI](https://openweathermap.org/api) pentru a putea primi ca si raspuns datele meteoreologice necesare. Parsarea raspunsului primit de la server, fiind in format JSON, este realizata cu ajutorului bibliotecii [minimal-json](https://github.com/ralfstx/minimal-json). De asemenea, aplicatia foloseste **Maven** pentru rezolvarea dependentilor necesare si [JavaFX](https://openjfx.io/) pentru realizarea aplicatiei cu interfata grafica.
 </br>
-Pentru rularea aplicatiei, creati o noua configurație de build, adăugați **Maven**, iar la **command line** completati cu **clean compile javafx:run**
+Pentru rularea aplicatiei, creati o noua configurație de build, adăugați **Maven**, iar la **command line** completati cu **clean compile javafx:run**.
 
 ## Utilizare
 Aplicatie va permite selectarea locatiei dorite prin intermediul a 2 liste prezente in interfata grafica, o lista cu tari si o lista cu orase. In functie de tara selectata, se va actualiza automat si cea de-a doua lista cu orasele specifice din cadrul tarii respective. In cadrul interfetei grafice, vor fi afisate diferite detalii la fiecare selectie:
