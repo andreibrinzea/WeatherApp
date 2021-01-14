@@ -10,12 +10,12 @@ Weather application
 - [Realizator](#realizator)
 
 ## Descriere
-Este o aplicate de monitorizare meteorologica dezvoltata in limbajul de programare **Java**. Pornind de la un fisier de intrare cu diferite date despre localitati, aplicatia va realiza cereri prin intermediului API-ului [OpenWeatherAPI](https://openweathermap.org/api) pentru a putea primi ca si raspuns datele meteoreologice necesare. Parsarea raspunsului primit de la server, fiind in format JSON, este realizata cu ajutorului bibliotecii [minimal-json](https://github.com/ralfstx/minimal-json). De asemenea, aplicatia foloseste **Maven** pentru rezolvarea dependentilor necesare si [JavaFX](https://openjfx.io/) pentru realizarea aplicatiei cu interfata grafica.
+Este o aplicate de monitorizare meteorologica dezvoltata in limbajul de programare **Java**. Pornind de la un fisier de intrare cu diferite date despre localitati, aplicatia va realiza cereri prin intermediului API-ului [OpenWeatherAPI](https://openweathermap.org/api) pentru a putea primi ca si raspuns datele meteorologice necesare. Parsarea raspunsului primit de la server, fiind in format JSON, este realizata cu ajutorului bibliotecii [minimal-json](https://github.com/ralfstx/minimal-json). De asemenea, aplicatia foloseste **Maven** pentru rezolvarea dependentilor necesare si [JavaFX](https://openjfx.io/) pentru realizarea aplicatiei cu interfata grafica.
 </br>
 Pentru rularea aplicatiei, creati o noua configurație de build, adăugați **Maven**, iar la **command line** completati cu **clean compile javafx:run**.
 
 ## Utilizare
-Aplicatie va permite selectarea locatiei dorite prin intermediul a 2 liste prezente in interfata grafica, o lista cu tari si o lista cu orase. In functie de tara selectata, se va actualiza automat si cea de-a doua lista cu orasele specifice din cadrul tarii respective. In cadrul interfetei grafice, vor fi afisate diferite detalii la fiecare selectie:
+Aplicatia permite selectarea locatiei dorite prin intermediul a 2 liste prezente in interfata grafica, o lista cu tari si o lista cu orase. In functie de tara selectata, se va actualiza automat si cea de-a doua lista cu orasele specifice din cadrul tarii respective. In cadrul interfetei grafice, vor fi afisate diferite detalii la fiecare selectie:
 - **o imagine specifica cu vremea la momentul curent din localitatea respectiva**
 - **numele localitatii selectate**
 - **data curenta pentru localitatea respectiva**, tinand cont si de aspectele de timp si timezone specifice pentru localitatea respectiva
@@ -59,10 +59,10 @@ ID		nm		lat		lon		countryCode
 2800866		Brussels	50.8504		4.3488		BE
 2800482		Charleroi	50.413		4.4465		BE	
 ```
-Fisierul de intrare trebuie trebuie sa aiba numele **input.txt** si trebuie sa se regaseasca in directorul **src/main/resources**. Exista un fisier default deja in calea respectiva. Pentru a putea adauga localitati noi in cadrul acestuia, este nevoie pentru o delimitare cu spatiu/spatii/tab/tab-uri intre datele fiecarei coloane.
+Fisierul de intrare trebuie trebuie sa aiba numele **input.txt** si trebuie sa se regaseasca in directorul **src/main/resources**. Exista un fisier default deja in calea respectiva. Pentru a putea adauga localitati noi in cadrul acestuia, este nevoie pentru o delimitare cu spatiu/spatii/tab/tab-uri intre coloane.
 </br>
 </br>
-In directorul **src/main/resources/ImageResources** se afla imaginile specifice cu tipurile de vreme posibile care pot fi returnate in raspunsurile primite de la server astfel incat, in functie de tipul returnat, sa poate afisa imaginea specifica in cadrul interfetei grafice.
+In directorul **src/main/resources/ImageResources** se afla imaginile specifice cu tipurile de vreme posibile care pot fi returnate in raspunsurile primite de la server astfel incat, in functie de tipul returnat, sa poate fi afisata imaginea specifica in cadrul interfetei grafice.
 
 De asemenea, in directorul **src/main/resources** se regaseste si fisierul **log.txt**, fisier in care sunt salvate toate detaliile in legatura cu vremea curenta la fiecare noua localitate selectata din interfata grafica.
 
