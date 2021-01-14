@@ -11,21 +11,38 @@ import org.mockito.Mockito;
 import ro.mta.se.lab.CustomExceptions.DuplicateCityException;
 import ro.mta.se.lab.model.City;
 import ro.mta.se.lab.model.Country;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test class for {@link Parser} class
+ * These test are made with mockito objects
+ * and mockito library
+ *
+ * @author Andrei Brinzea
+ */
 
 public class ParserTest {
+    /**
+     * Members of <b>ParserTest</b> class
+     * <i>parserInstance: </i> instance of {@link Parser} class
+     * <i>countries: </i> list with countries
+     * <i>initDataFile: </i> list with init strings
+     * <i>citiesForMock: </i> list with cities for mocking testing
+     */
+
     Parser parserInstance;
     ObservableList<Country> countries;
     ArrayList<String> initDataFile;
     ArrayList<City> citiesForMock;
 
+
+    /**
+     * Set specific value before tests
+     */
     @Before
     public void setUp() {
         parserInstance = mock(Parser.class);
@@ -39,6 +56,9 @@ public class ParserTest {
         countries.add(new Country(citiesForMock, "FR"));
     }
 
+    /**
+     * Test functions used to test init data with mockito
+     */
     @Test
     public void getInitDataWithMock() {
         try {
@@ -61,6 +81,10 @@ public class ParserTest {
         }
     }
 
+    /**
+     * Test function used to check adding of new city and
+     * this is made with mockito
+     */
     @Test
     public void addNewCityInList() {
         try {
@@ -98,6 +122,10 @@ public class ParserTest {
     @Rule
     public ExpectedException duplicateCityException = ExpectedException.none();
 
+    /**
+     * Test function to check duplicate city exception
+     * @throws DuplicateCityException if a city has been already added
+     */
     @Test
     public void checkDuplicateCityException() throws DuplicateCityException {
         try {
@@ -118,7 +146,9 @@ public class ParserTest {
         }
     }
 
-
+    /**
+     * Function to clear data after tests
+     */
     @After
     public void clearData() {
         parserInstance = null;

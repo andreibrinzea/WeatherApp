@@ -19,11 +19,11 @@ public class CountryNamesTest {
     /**
      * Members of <b>CountryNamesTest</b>
      * <i>countryNamesInstance: </i> instance of {@link CountryNames}
-     * <i>validCountryCode1: </i> code used for an valid test
-     * <i>validCountryCode2: </i> code used for an valid test
+     * <i>validCountryCode1: </i> valid country code
+     * <i>validCountryCode2: </i> valid country code
      * <i>invalidCountryCode: </i> code used for an invalid test
-     * <i>validCountryName1: </i> code used for an valid test
-     * <i>validCountryName2: </i> code used for an valid test
+     * <i>validCountryName1: </i> invalid country code
+     * <i>validCountryName2: </i> invalid country code
      */
 
     private CountryNames countryNamesInstance = null;
@@ -76,6 +76,7 @@ public class CountryNamesTest {
     /**
      * Test function used to check a specific exception for an
      * invalid country code
+     * @throws InvalidCountryException if country code is invalid
      */
     @Test
     public void invalidCountryCode() throws InvalidCountryException {

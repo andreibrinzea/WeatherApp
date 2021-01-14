@@ -9,20 +9,39 @@ import org.junit.rules.ExpectedException;
 import java.io.IOException;
 import static org.junit.Assert.*;
 
+/**
+ * Test class for {@link WeatherClient} class
+ *
+ * @author Andrei Brinzea
+ */
 
 public class WeatherClientTest {
+    /**
+     * Members of <b>WeatherClientTest</b> class
+     * <i>client: </i> instance of {@link WeatherClient} class
+     * <i>apiKey: </i> api key value
+     * <i>invalidCityID: </i> invalid city ID
+     * <i>validCityID: </i> valid city ID
+     */
 
     public static WeatherClient client = null;
     private static String apiKey = null;
     String invalidCityID = null;
     String validCityID = null;
 
+    /**
+     * Function used to set specific values before tests
+     */
     @BeforeClass
     public static void setUp() {
         client = WeatherClient.getInstance();
         apiKey = "e434ef29d319e8fb8c77d99dea69187e";
     }
 
+    /**
+     * Function used to set <i>invalidCityID</i> and
+     * <i>validCityID</i> before every test
+     */
     @Before
     public void setCityIDs() {
         invalidCityID = "invalid";
@@ -32,12 +51,20 @@ public class WeatherClientTest {
     @Rule
     public ExpectedException WeatherClientException = ExpectedException.none();
 
+    /**
+     * Test functions used to check results for an invalid city ID
+     * @throws IOException if file operations will failed
+     */
     @Test
     public void getResultsIfCityIDisInvalid() throws IOException {
         WeatherClientException.expect(IOException.class);
         client.getResults(invalidCityID);
     }
 
+    /**
+     * Test function used to check for an valid city ID
+     * @throws IOException if file operations will failed
+     */
     @Test
     public void getResultsIfCityIsValid() throws IOException {
         String responseData = null;
@@ -77,6 +104,10 @@ public class WeatherClientTest {
 
     }
 
+    /**
+     * Test functions to check instance of {@link WeatherClient}
+     * class
+     */
     @Test
     public void getInstance() {
         assertNotNull(client);
@@ -84,12 +115,18 @@ public class WeatherClientTest {
         assertEquals(apiKey, client.getApiKey());
     }
 
+    /**
+     * Clear data after tests
+     */
     @AfterClass
     public static void clearData() {
         client = null;
         apiKey = null;
     }
 
+    /**
+     * Clear data after every test
+     */
     @After
     public void clearCityIDs() {
         invalidCityID = null;
