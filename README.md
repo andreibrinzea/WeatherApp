@@ -64,6 +64,8 @@ Fisierul de intrare trebuie trebuie sa aiba numele **input.txt** si trebuie sa s
 </br>
 In directorul **src/main/resources/ImageResources** se afla imaginile specifice cu tipurile de vreme posibile care pot fi returnate in raspunsurile primite de la server astfel incat, in functie de tipul returnat, sa poate afisa imaginea specifica in cadrul interfetei grafice.
 
+De asemenea, in directorul **src/main/resources** se regaseste si fisierul **log.txt**, fisier in care sunt salvate toate detaliile in legatura cu vremea curenta la fiecare noua localitate selectata din interfata grafica.
+
 ## Diagramele realizate
 Pentru a vizualiza **diagrama cazurilor de utilizare**, aceasta se regaseste in directorul **Diagrams** -> imaginea **DiagramaCazuriUtilizare.png**
 </br>
