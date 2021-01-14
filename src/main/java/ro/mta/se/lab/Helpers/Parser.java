@@ -121,8 +121,8 @@ public class Parser {
      * @param countryCode country code where city will be added
      * @throws DuplicateCityException if city has been already added
      */
-    public void addCityInCountriesList(String cityID, String cityName, Float latitude,
-                                       Float longitude, String countryCode) throws DuplicateCityException {
+    public void addCityInCountriesList(String cityID, String cityName, float latitude,
+                                       float longitude, String countryCode) throws DuplicateCityException {
         int i, j;
 
         for (i = 0; i < initCountries.size(); i++) {

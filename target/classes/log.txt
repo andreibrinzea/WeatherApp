@@ -70,27 +70,3 @@ Pressure: 1002.0 hPa
 Humidity: 80.0%
 Wind: 7.72km/h
 
-Thursday 10:48: Country: France  City:Tarascon
-Main weather: Clear sky
-Weather description: Clear
-Degrees: 10.34°C
-Pressure: 1021.0 hPa
-Humidity: 50.0%
-Wind: 6.69km/h
-
-Thursday 11:48: Country: Romania  City:Bucharest
-Main weather: Clear sky
-Weather description: Clear
-Degrees: 0.58°C
-Pressure: 1008.0 hPa
-Humidity: 69.0%
-Wind: 2.06km/h
-
-Thursday 11:48: Country: Romania  City:Buzau
-Main weather: Broken clouds
-Weather description: Clouds
-Degrees: 1.44°C
-Pressure: 1008.0 hPa
-Humidity: 82.0%
-Wind: 2.72km/h
-
