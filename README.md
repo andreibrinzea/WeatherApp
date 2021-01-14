@@ -6,6 +6,8 @@ Weather application
 ## Table of contents
 - [Descriere](#descriere)
 - [Utilizare](#utilizare)
+- [Diagrama de clase](#diagrama-de-clase)
+- [Diagrama cazurilor de utilizare](#diagrama-cazuri-utilizare)
 - [Realizator](#realizator)
 
 ## Descriere
@@ -64,6 +66,11 @@ Fisierul de intrare trebuie trebuie sa aiba numele **input.txt** si trebuie sa s
 </br>
 In directorul **src/main/resources/ImageResources** se afla imaginile specifice cu tipurile de vreme posibile care pot fi returnate in raspunsurile primite de la server astfel incat, in functie de tipul returnat, sa poate afisa imaginea specifica in cadrul interfetei grafice.
 
+## Diagrama de clase
+  ![Diagrama de clase](Diagrams/DiagramaClase.png)
+  
+## Diagrama cazurilor de utilizare
+  ![Diagrama cazurilor de utilizare](Diagrams/DiagramaCazuriUtilizare.png)
 
 ## Realizator
 :man_student: Brînzea Andrei  
