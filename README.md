@@ -6,7 +6,7 @@ Weather application
 ## Table of contents
 - [Descriere](#descriere)
 - [Utilizare](#utilizare)
-- Diagramele realizate
+- [Diagramele realizate](#diagramele-realizate)
 - [Realizator](#realizator)
 
 ## Descriere
